@@ -55,3 +55,27 @@ const Home = () => {
                 </div>
             </section>
 
+
+            <section className='py-16 bg-white'>
+                <div className='container'>
+                    <div className='freeShipping w-[80%] m-auto py-4 p-4 border-2 border-primary flex items-center justify-between rounded-md'>
+                        <div className='col1 flex items-center gap-4'>
+                            <LiaShippingFastSolid className='text-[50px]'/>
+                            <span className='text-[20px] font-[600]'>Free Shipping</span>
+                        </div>
+                        <div className='col2 '>
+                            <p className='mb-0 font-[500]'>Free Delivery Now On Your First Order and over $200</p>
+                        </div>
+                        <p className='font-bold text-[25px]'>- Only $200*</p>
+                    </div>
+
+                    <AdsBannerSlider item={4}/>
+                </div>
+            </section>
+
+        </>
+
+    )
+}
+
+export default Home;
