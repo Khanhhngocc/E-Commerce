@@ -14,13 +14,14 @@ const HomeSlider = () => {
         <div className='homeSlider py-4'>
             <div className='container'>
                 <Swiper 
+                    loop={true}
                     spaceBetween={20}
                     navigation={true} 
+                    modules={[Autoplay, Navigation]} 
                     autoplay={{
                         delay: 2500,
                         disableOnInteraction: false,
                     }}
-                    modules={[Autoplay, Navigation]} 
                     className="sliderHome"
                 >
                     <SwiperSlide>
@@ -36,7 +37,7 @@ const HomeSlider = () => {
                     <SwiperSlide>
                         <div className='item rounded-[20px] overflow-hidden'>
                             <img 
-                                src='https://serviceapi.spicezgold.com/download/1741660881858_NewProject(11).jpg' 
+                                src='https://serviceapi.spicezgold.com/download/1741660862304_NewProject(8).jpg' 
                                 alt='Banner slide'
                                 className='w-full'
                             />
@@ -45,7 +46,7 @@ const HomeSlider = () => {
                     <SwiperSlide>
                         <div className='item rounded-[20px] overflow-hidden'>
                             <img 
-                                src='https://serviceapi.spicezgold.com/download/1741660881858_NewProject(11).jpg' 
+                                src='https://serviceapi.spicezgold.com/download/1745503990603_NewProject(13).jpg' 
                                 alt='Banner slide'
                                 className='w-full'
                             />
