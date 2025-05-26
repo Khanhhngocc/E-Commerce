@@ -9,8 +9,20 @@ import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import ProductsSlider from '../../components/ProductsSlider';
 
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+
+// import required modules
+import { Navigation } from 'swiper/modules';
+
 import Footer from '../../components/Footer';
 import BlogItem from '../../components/BlogItem';
+import BannerBoxV2 from '../../components/BannerBoxV2';
+import HomeBannerV2 from '../../components/HomeSliderV2';
+
 const Home = () => {
     const [value, setValue] = React.useState(0);
 
@@ -58,7 +70,21 @@ const Home = () => {
             </section>
 
 
-            <section className='py-16 bg-white'>
+            <section className='bg-white py-6'>
+                <div className='container flex gap-5'>
+                    <div className='part1 w-[70%]'>
+                        <HomeBannerV2 />
+                    </div>
+
+                    <div className='part2 w-[30%] flex items-center justify-center flex-col gap-5'>
+                        <BannerBoxV2 image={"https://serviceapi.spicezgold.com/download/1741664496923_1737020250515_New_Project_47.jpg"} info="left"/>
+                        <BannerBoxV2 image={"https://serviceapi.spicezgold.com/download/1741664665391_1741497254110_New_Project_50.jpg"} info="right"/>
+                    </div>
+                </div>
+            </section>
+
+
+            <section className='py-5 pt-2 bg-white'>
                 <div className='container'>
                     <div className='freeShipping w-[80%] m-auto py-4 p-4 border-2 border-primary flex items-center justify-between rounded-md'>
                         <div className='col1 flex items-center gap-4'>
