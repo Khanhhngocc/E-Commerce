@@ -21,7 +21,7 @@ const Footer = () => {
             <footer>
                 <div className="pt-6 bg-[#fafafa]">
                     <div className="container">
-                        <div className="flex flex-items justify-center gap-2 py-8 pb-8">
+                        <div className="flex items-center justify-center gap-2 py-8 pb-8">
                             <div className='col flex flex-col items-center justify-center w-[15%] group'>
                                 <LiaShippingFastSolid className='text-[40px] transition-all duration-300 group-hover:text-primary
                                 group-hover:-translate-y-1'/>
