@@ -150,3 +150,6 @@ input[type=number]::-webkit-outer-spin-button {
 
 /* CART PANEL */
 .cartPanel .MuiPaper-root {width: 400px;}
+
+#size-menu .MuiButtonBase-root {font-size: 12px !important;}
+.cartItem img {aspect-ratio: 4/5; object-fit: cover;}

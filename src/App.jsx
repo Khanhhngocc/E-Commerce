@@ -15,6 +15,7 @@ import ProductDetailsComponent from './components/ProductDetailsComponent';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
 import CartPanel from './components/CartPanel';
+import CartPage from './Pages/Cart';
 
 const MyContext = createContext()
 
@@ -23,7 +24,7 @@ function App() {
   const [fullWidth, setFullWidth] = useState(true);
   const [maxWidth, setMaxWidth] = useState('lg');
 
-  const [openCartPanel, setOpenCartPanel] = useState(true);
+  const [openCartPanel, setOpenCartPanel] = useState(false);
 
   const toggleCartPanel = (newOpen) => () => {
     setOpenCartPanel(newOpen);
@@ -54,6 +55,7 @@ function App() {
             <Route path={"/product/:id"} exact={true} element={<ProductDetails />} />
             <Route path={"/login"} exact={true} element={<Login />}/>
             <Route path={"/register"} exact={true} element={<Register />} />
+            <Route path={"/cart"} exact={true} element={<CartPage />}/>
           </Routes>
           <Footer />
           <CartPanel />
