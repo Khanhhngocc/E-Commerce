@@ -14,6 +14,7 @@ import ProductZoom from './components/ProductZoom';
 import ProductDetailsComponent from './components/ProductDetailsComponent';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
+import CartPanel from './components/CartPanel';
 
 const MyContext = createContext()
 
@@ -21,6 +22,12 @@ function App() {
   const [openProductDetailsModal, setOpenProductDetailsModal] = useState(false);
   const [fullWidth, setFullWidth] = useState(true);
   const [maxWidth, setMaxWidth] = useState('lg');
+
+  const [openCartPanel, setOpenCartPanel] = useState(true);
+
+  const toggleCartPanel = (newOpen) => () => {
+    setOpenCartPanel(newOpen);
+  };
 
   const handleClickOpenProductDetailsModal = () => {
     setOpenProductDetailsModal(true);
@@ -31,7 +38,9 @@ function App() {
   };
 
   const values = {
-    setOpenProductDetailsModal
+    setOpenProductDetailsModal,
+    openCartPanel,
+    toggleCartPanel
   }
 
   return (
@@ -47,6 +56,7 @@ function App() {
             <Route path={"/register"} exact={true} element={<Register />} />
           </Routes>
           <Footer />
+          <CartPanel />
         </MyContext.Provider>
       </BrowserRouter>
 
