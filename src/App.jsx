@@ -21,6 +21,7 @@ import Verify from './Pages/Verify';
 import toast, { Toaster } from 'react-hot-toast';
 import ForgotPassword from './Pages/ForgotPassword';
 import Checkout from './Pages/Checkout';
+import MyAccount from './Pages/MyAccount';
 
 
 const MyContext = createContext()
@@ -53,11 +54,15 @@ function App() {
     }
   }
 
+  const [isLoggedIn, setIsLoggedIn] = useState(true)
+
   const values = {
     setOpenProductDetailsModal,
     openCartPanel,
     toggleCartPanel,
-    openAlertBox
+    openAlertBox,
+    isLoggedIn,
+    setIsLoggedIn
   }
 
   return (
@@ -75,6 +80,7 @@ function App() {
             <Route path={"/verify"} exact={true} element={<Verify />}/>
             <Route path={"/forgot-password"} exact={true} element={<ForgotPassword />} />
             <Route path={"/checkout"} exact={true} element={<Checkout />} />
+            <Route path={"/my-account"} exact={true} element={<MyAccount />} />
           </Routes>
           <Footer />
           <CartPanel />
