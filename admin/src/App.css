@@ -1,0 +1,16 @@
+.MuiBadge-badge {background: #ff5252 !important;}
+
+*{margin: 0; box-sizing: border-box;}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  background: #f4f0ef;
+  color: #3e3e3e;
+  overflow-x: hidden;
+}
+
+.ReactCollapse--collapse {
+    transition: height 400ms;
+  }
+  
