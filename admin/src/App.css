@@ -13,4 +13,10 @@ body {
 .ReactCollapse--collapse {
     transition: height 400ms;
   }
-  
+  }
+
+::-webkit-scrollbar {width: 10px !important; height: 10px !important;}
+::-webkit-scrollbar-thumb {background: #ccc !important;}
+
+.btn-blue {background: #3872fa !important; color: white !important; padding: 8px 20px !important; font-weight: 600 !important;}
+.btn-blue:hover {background: #3067e5 !important;}
