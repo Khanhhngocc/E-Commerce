@@ -16,6 +16,8 @@ import Typography from "@mui/material/Typography";
 import { IoMdClose } from "react-icons/io";
 import Slide from "@mui/material/Slide";
 import "./App.css";
+import HomeSliderBanners from "./Pages/HomeSliderBanners";
+import AddHomeSlide from "./Pages/HomeSliderBanners/AddHomeSlide";
 export const MyContext = createContext();
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -97,6 +99,35 @@ function App() {
         </>
       ),
     },
+    {
+      path: "/homeSlider/list",
+      element: (
+        <>
+          <section className="main">
+            <Header />
+            <div className="contentMain flex">
+              <div
+                className={`sidebarWrapper overflow-hidden ${
+                  isSidebarOpen === true
+                    ? "w-[20%] opacity-100"
+                    : "w-[0px] opacity-0"
+                } transition-all`}
+              >
+                <Sidebar />
+              </div>
+
+              <div
+                className={`contentRight py-4 px-5 ${
+                  isSidebarOpen === false ? "w-[100%]" : "w-[80%]"
+                } transition-all`}
+              >
+                <HomeSliderBanners />
+              </div>
+            </div>
+          </section>
+        </>
+      ),
+    },
                 <Sidebar />
               </div>
 
@@ -151,6 +182,7 @@ function App() {
             </Toolbar>
           </AppBar>
           {isOpenFullScreenPanel.model === "Add Product" && <AddProduct />}
+          {isOpenFullScreenPanel.model === "Add Home Slide" && <AddHomeSlide />}
         </Dialog>
       </MyContext.Provider>
     </>

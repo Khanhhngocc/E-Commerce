@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 import { RxDashboard } from "react-icons/rx";
@@ -14,8 +14,12 @@ import { SiBloglovin } from "react-icons/si";
 import { IoSettingsOutline } from "react-icons/io5";
 
 import { Collapse } from "react-collapse";
+import { MyContext } from "../../App";
+
 
 const Sidebar = () => {
+  const context = useContext(MyContext);
+  
   const [openSubMenuIndex, setOpenSubMenuIndex] = useState(null);
 
   const isOpenSubMenu = (index) => {
@@ -35,7 +39,7 @@ const Sidebar = () => {
           </Link>
         </div>
 
-        <ul className="mt-5">
+        <ul className="mt-10">
           <li className="list-none">
             <Link to={"/"}>
               <Button
@@ -66,7 +70,7 @@ const Sidebar = () => {
             <Collapse isOpened={openSubMenuIndex === 1 ? true : false}>
               <ul>
                 <li className="w-full">
-                  <Link to={""}>
+                  <Link to={"/homeSlider/list"}>
                     <Button
                       className="!pl-9 !w-full !capitalize !text-[rgba(0,0,0,0.7)] 
                 flex !justify-start !text-[13px] !font-[500] gap-3"
@@ -136,6 +140,10 @@ const Sidebar = () => {
                     <Button
                       className="!pl-9 !w-full !capitalize !text-[rgba(0,0,0,0.7)]
                     flex !justify-start !text-[13px] gap-3"
+                      onClick={() => context.setIsOpenFullScreenPanel({
+                        open: true,
+                        model: "Add Product"
+                      })}
                     >
                       <span className="block w-[5px] h-[5px] rounded-full bg-[rgba(0,0,0,0.2)]"></span>
                       Product Upload
