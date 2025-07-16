@@ -18,6 +18,8 @@ import Slide from "@mui/material/Slide";
 import "./App.css";
 import HomeSliderBanners from "./Pages/HomeSliderBanners";
 import AddHomeSlide from "./Pages/HomeSliderBanners/AddHomeSlide";
+import Orders from "./Pages/Orders";
+
 export const MyContext = createContext();
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -131,6 +133,30 @@ function App() {
                 <Sidebar />
               </div>
 
+    {
+      path: "/orders",
+      element: (
+        <>
+          <section className="main">
+            <Header />
+            <div className="contentMain flex">
+              <div
+                className={`sidebarWrapper overflow-hidden ${
+                  isSidebarOpen === true
+                    ? "w-[20%] opacity-100"
+                    : "w-[0] opacity-0"
+                } transition-all`}
+              >
+                <Sidebar />
+              </div>
+
+              <div
+                className={`contentRight py-4 px-5 ${
+                  isSidebarOpen === false ? "w-[100%]" : "w-[80%]"
+                } transition-all`}
+              >
+                <Orders />
+              </div>
             </div>
           </section>
         </>
