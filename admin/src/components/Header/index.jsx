@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Button from "@mui/material/Button";
 import { RiMenu2Line } from "react-icons/ri";
 import Badge from "@mui/material/Badge";
@@ -9,6 +9,10 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Divider from '@mui/material/Divider';
 import { FaRegUser } from "react-icons/fa";
+import { RiLogoutCircleRLine } from "react-icons/ri";
+import { IoSettingsOutline } from "react-icons/io5";
+import { MyContext } from "../../App";
+
 
 
 
@@ -31,10 +35,14 @@ const Header = () => {
     setAnchorMyAcc(null);
   };
 
+  const context = useContext(MyContext);
+
   return (
-    <header className="w-full h-auto py-2 pl-80 pr-7 bg-[#fff] shadow-md flex items-center justify-between">
+    <header className={`w-full h-auto py-2 ${context.isSidebarOpen === true ? 'pl-80' : 'pl-5'} pr-7 bg-[#fff] 
+    shadow-md flex items-center justify-between transition-all`}>
       <div className="part1">
-        <Button className="!w-[40px] !h-[40px] !min-w-[40px] !rounded-full !text-[rgba(0,0,0,0.8)]">
+        <Button className="!w-[40px] !h-[40px] !min-w-[40px] !rounded-full !text-[rgba(0,0,0,0.8)]"
+        onClick={() => context.setIsSidebarOpen(!context.isSidebarOpen)}>
           <RiMenu2Line className="text-[22px] text-[rgba(0,0,0,0.8)]" />
         </Button>
       </div>
@@ -112,6 +120,13 @@ const Header = () => {
             <Divider />
             <MenuItem onClick={handleCloseMyAcc} className="flex items-center gap-3">
                 <FaRegUser className="text-[16px]"/> <span className="text-[14px]">Profile</span>
+            </MenuItem>
+            <MenuItem onClick={handleCloseMyAcc} className="flex items-center gap-3">
+                <IoSettingsOutline className="text-[16px]"/> <span className="text-[14px]">Account Setting</span>
+            </MenuItem>
+            <Divider />
+            <MenuItem onClick={handleCloseMyAcc} className="flex items-center gap-3">
+                <RiLogoutCircleRLine className="text-[16px]"/> <span className="text-[14px]">Logout</span>
             </MenuItem>
           </Menu>
         </div>

@@ -5,15 +5,14 @@
 body {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
-  background: #f4f0ef;
+  background: #f1f1f1;
   color: #3e3e3e;
   overflow-x: hidden;
 }
 
 .ReactCollapse--collapse {
     transition: height 400ms;
-  }
-  }
+}
 
 ::-webkit-scrollbar {width: 10px !important; height: 10px !important;}
 ::-webkit-scrollbar-thumb {background: #ccc !important;}
