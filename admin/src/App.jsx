@@ -18,8 +18,11 @@ import Slide from "@mui/material/Slide";
 import "./App.css";
 import HomeSliderBanners from "./Pages/HomeSliderBanners";
 import AddHomeSlide from "./Pages/HomeSliderBanners/AddHomeSlide";
+import CategoryList from "./Pages/Category";
+import AddCategory from "./Pages/Category/AddCategory";
 import Users from "./Pages/Users";
 import Orders from "./Pages/Orders";
+import SubCategoryList from "./Pages/Category/SubCategoryList";
 
 export const MyContext = createContext();
 
@@ -131,9 +134,64 @@ function App() {
         </>
       ),
     },
+    {
+      path: "/category/list",
+      element: (
+        <>
+          <section className="main">
+            <Header />
+            <div className="contentMain flex">
+              <div
+                className={`sidebarWrapper overflow-hidden ${
+                  isSidebarOpen === true
+                    ? "w-[20%] opacity-100"
+                    : "w-[0] opacity-0"
+                } transition-all`}
+              >
                 <Sidebar />
               </div>
 
+              <div
+                className={`contentRight py-4 px-5 ${
+                  isSidebarOpen === false ? "w-[100%]" : "w-[80%]"
+                } transition-all`}
+              >
+                <CategoryList />
+              </div>
+            </div>
+          </section>
+        </>
+      ),
+    },
+    {
+      path: "/category/subCat",
+      element: (
+        <>
+          <section className="main">
+            <Header />
+            <div className="contentMain flex">
+              <div
+                className={`sidebarWrapper overflow-hidden ${
+                  isSidebarOpen === true
+                    ? "w-[20%] opacity-100"
+                    : "w-[0] opacity-0"
+                } transition-all`}
+              >
+                <Sidebar />
+              </div>
+
+              <div
+                className={`contentRight py-4 px-5 ${
+                  isSidebarOpen === false ? "w-[100%]" : "w-[80%]"
+                } transition-all`}
+              >
+                <SubCategoryList />
+              </div>
+            </div>
+          </section>
+        </>
+      ),
+    },
     {
       path: "/users",
       element: (
@@ -239,6 +297,9 @@ function App() {
           </AppBar>
           {isOpenFullScreenPanel.model === "Add Product" && <AddProduct />}
           {isOpenFullScreenPanel.model === "Add Home Slide" && <AddHomeSlide />}
+          {isOpenFullScreenPanel.model === "Add New Category" && (
+            <AddCategory />
+          )}
         </Dialog>
       </MyContext.Provider>
     </>
